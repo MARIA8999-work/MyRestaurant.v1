@@ -1,81 +1,56 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Le Jardin Mexicain </title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Le Jardine Mexican</title>
+
+    
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <!--
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/Cruzito123/Proyecto-Web/refs/heads/main/Restaurant/myRestaurant/static/css/Styles.css">
+    -->
 </head>
 <body>
-    
-    <header  style="text-align: center;">
-       <h1>Le Jardine Mexican</h1>
+    <!-- Encabezado con menú -->
+    <header>        
+        <a href="/">
+            <img src="{% static 'img/Logo.png' %}" alt="Logo Le Jardine Mexican" class="logo">
+        </a>
         <nav>
             <ul>
-                <li><a href="#mision">Misión</a></li>
+            
+                <li><a href="#mision">Misión</a></li>                
                 <li><a href="#vision">Visión</a></li>
                 <li><a href="#valores">Valores</a></li>
                 <li><a href="#contacto">Contacto</a></li>
+                <li><a href="/resturant/myrestaurant/templates/altas.html"></a></li>
+                <a href="{% url 'altas' %}">Gestión de Platillos</a>
+
+
             </ul>
         </nav>
     </header>
-  
-    <!-- 
-    <section>
-        <h1>Estado de la Conexión a la Base de Datos</h1>
-        <p>{{ status }}</p>
-    </section>
-<section>
-    <h2>Platillos Disponibles</h2>
-    <table>
-        <tr>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Precio</th>
-            <th>Categoría</th>
-            <th>Vegano</th>
-            <th>Alergenos</th>
-            <th>Imagen URL</th>
-            <th>Acción</th>
-        </tr>
-        {% for platillo in platillos %}
-        <tr>
-            <form method="POST">
-                {% csrf_token %}
-                <td><input type="text" name="nombre" value="{{ platillo.nombre }}"></td>
-                <td><input type="text" name="descripcion" value="{{ platillo.descripcion }}"></td>
-                <td><input type="number" step="0.01" name="precio" value="{{ platillo.precio }}"></td>
-                <td><input type="text" name="categoria" value="{{ platillo.categoria }}"></td>
-                <td>
-                    <input type="checkbox" name="es_vegano" {% if platillo.es_vegano %}checked{% endif %}>
-                </td>
-                <td>
-                    <input type="checkbox" name="contiene_alergenos" {% if platillo.contiene_alergenos %}checked{% endif %}>
-                </td>
-                <td><input type="text" name="imagen_url" value="{{ platillo.imagen_url }}"></td>
-                <td>
-                    <input type="hidden" name="platillo_id" value="{{ platillo.id }}">
-                    <button type="submit">Actualizar</button>
-                </td>
-            </form>
-        </tr>
-        {% endfor %}
-    </table>
-</section>
--->
 
-    <!-- Apartado de Misión, Visión y Valores -->
-    <section>
+    
+    <h1 class="main-title">Le Jardine Mexican</h1>
+
+
+    <section id="mision">
         <h2>Misión</h2>
         <p>
             Ofrecer una experiencia gastronómica elegante y acogedora, donde los sabores tradicionales de México se fusionan con el arte refinado de la repostería francesa, incluyendo opciones veganas que celebran la diversidad gastronómica y el respeto por todos los estilos de vida. Deleitando los sentidos y creando momentos memorables para cada comensal.
         </p>
+    </section>
 
+    <section id="vision">
         <h2>Visión</h2>
         <p>
             Ser reconocido como un referente de la alta cocina mexicana con un toque francés, ofreciendo platillos que conectan culturas y corazones, destacando por la calidad, el servicio excepcional y la experiencia tanto en el restaurante como desde la comodidad del hogar a través de pedidos en línea.
         </p>
+    </section>
 
+    <section id="valores">
         <h2>Valores</h2>
         <ul>
             <li><strong>Inclusión:</strong> Celebramos todos los estilos de alimentación, ofreciendo opciones veganas sin comprometer el sabor ni la calidad.</li>
@@ -85,22 +60,57 @@
             <li><strong>Innovación:</strong> Combinamos técnicas clásicas con propuestas modernas para sorprender.</li>
             <li><strong>Sostenibilidad:</strong> Promovemos prácticas responsables en ingredientes, empaques y procesos.</li>
         </ul>
+    </section>
 
+    <section id="contacto">
         <h2>Contacto</h2>
         <p>
             ¿Tienes preguntas, sugerencias o quieres reservar una mesa para una ocasión especial? ¡Nos encantará escucharte!<br>
-            Dirección: Paseos Revolucionarios del Puerto 540 Colonia Industrial<br>
-            Teléfono: 4456789<br>
-            Correo electrónico: lejardinmexicain1@gamil.com<br>
-            Horarios: Lunes a Domingo de 13:00 a 23:00 hrs
+            📍 Dirección: Paseos Revolucionarios del Puerto 540 Colonia Industrial<br>
+            📞 Teléfono: 4456789<br>
+            📧 Correo electrónico: lejardinmexicain1@gamil.com<br>
+            🕒 Horarios: Lunes a Domingo de 13:00 a 23:00 hrs
         </p>
         <p>
             También puedes hacer tus pedidos en línea directamente desde nuestra página. Disfruta nuestros platillos en casa con la misma calidad y presentación que en el restaurante.<br>
             Síguenos en redes sociales para conocer nuestras novedades, menús especiales y postres que te harán volver.
         </p>
     </section>
+
+    
     <footer>
-        <p>&copy; Le Jardine Mexican </p>
-    </footer>
+        <p>&copy; 2025 Le Jardine Mexican - Todos los derechos reservados</p>
+       
+    <p>
+        Página validada con <a href="https://validator.w3.org/nu/#textarea" target="_blank">W3C Validator</a>
+        <br>
+        <img src="https://www.w3.org/Icons/valid-html401" alt="HTML válido por W3C" width="88" height="31">
+    </p>
+    <p>
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="https://jigsaw.w3.org/css-validator/images/vcss"
+            alt="¡CSS Válido!" />
+    </a>
+</p>
+</footer>
+
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const prevButton = document.getElementById('prev-slide');
+            const nextButton = document.getElementById('next-slide');
+            const container = document.querySelector('.platillos-container');
+
+            nextButton.addEventListener('click', () => {
+                container.scrollBy({ left: 410, behavior: 'smooth' });
+            });
+
+            prevButton.addEventListener('click', () => {
+                container.scrollBy({ left: -410, behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>

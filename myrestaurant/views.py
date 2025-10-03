@@ -5,7 +5,28 @@ from django.db import connection
 from .models import Platillo
 
 def Inicio(request):
-    """"
+
+    return render(request, 'index.html')
+
+#añadido por mi
+
+def Altas(request):
+    return render(request, 'altas.html')
+
+""""
+def index(request):
+    return render(request, 'myrestaurant/index.html')
+
+
+
+def eliminar(request):
+    return render(request, 'myrestaurant/eliminar.html')
+
+def modificar(request):
+    return render(request, 'myrestaurant/modificar.html')
+
+    s
+        
     if request.method == "POST":
         platillo_id = request.POST.get('platillo_id')
         platillo = Platillo.objects.get(id=platillo_id)
@@ -29,5 +50,3 @@ def Inicio(request):
     except Exception as e:
         status = f"Error de conexión: {e}"
 """
-    return render(request, 'index.html')
-    
