@@ -11,7 +11,7 @@ def Inicio(request):
 #añadido por mi
 
 def Altas(request):
-    return render(request, 'altas.html')
+    return render(request, 'Altas.html')
 
 """"
 def index(request):
